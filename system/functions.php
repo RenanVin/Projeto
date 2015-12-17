@@ -50,6 +50,56 @@
 		';
 	}
 
+	function sweetOptions($title, $msg, $type, $funcBtn, $funcBtn2)
+	{
+
+		if($type == "error")
+		{
+			$btnColor = "#F27474";
+		}
+		elseif($type == "success")
+		{
+			$btnColor = "#A5DC86";
+		}
+		elseif($type == "warning")
+		{
+			$btnColor = "#F8C086";
+		}
+		elseif($type == "info")
+		{
+			$btnColor = "#C9DAE1";
+		}
+
+		return '
+		<script>
+			swal({
+				title : "'.$title.'",
+				html  : "'.$msg.'",
+				type  : "'.$type.'",
+				showCancelButton   : true,
+				confirmButtonColor : "'.$funcBtn[0].'",
+				cancelButtonColor  : "'.$funcBtn2[0].'",
+				confirmButtonText  : "'.$funcBtn[1].'",
+				cancelButtonText   : "'.$funcBtn2[1].'",
+				confirmButtonClass : "confirm-class",
+				cancelButtonClass  : "cancel-class",
+				closeOnConfirm     : false,
+				closeOnCancel      : false
+			},
+			function(isConfirm) {
+				if(isConfirm)
+				{
+					'.$funcBtn[2].'
+				}
+				else
+				{
+					'.$funcBtn2[2].'
+				}
+			});
+		</script>
+		';
+	}
+
 	function jsScript($content)
 	{
 		return '
