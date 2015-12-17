@@ -1,0 +1,83 @@
+<!-- Version and name 1.0.0-2015.18.09-View.Contato --> 
+<div class="container fale-conosco">
+
+	<div class="titles">
+		<h1>{TITULO}</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			{TEXTO}
+		</div>
+		<div class="col-md-6">
+			<form name="formContato" class="formContato" method="post" action="#">
+				<input name="formName" type="hidden" value="formContato" />
+				<div class="form-group input-contNome">
+					<input type="text" class="form-control input-sm" name="contNome" placeholder="Nome" />
+				</div>
+				
+				<div class="form-group input-contEmail">
+					<input type="text" class="form-control input-sm" name="contEmail" placeholder="E-mail" />
+				</div>
+
+				<div class="form-group input-contTelefone">
+					<input type="text" class="form-control input-sm maskTelefones" name="contTelefone" placeholder="Telefone" />
+				</div>
+
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group input-contCidade">
+							<input type="text" class="form-control input-sm" name="contCidade" placeholder="Cidade" />
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group input-contUf">
+							<input type="text" class="form-control input-sm" name="contUf" placeholder="UF" />
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group input-contMsg">
+					<textarea rows="6" class="form-control input-sm" name="contMsg" placeholder="Mensagem"></textarea>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button type="submit" class="btn btn-default send" />ENVIAR</button>
+					</div>
+					<div class="col-md-12 result"></div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	$(document).ready(function(){
+		enviandoContato = 0;
+		$(".formContato").submit(function(e) {
+			e.preventDefault();
+
+			if(enviandoContato == 1){ return false; }
+			enviandoContato = 1;
+
+			$(".send").removeClass("btn-success");
+			$(".send").html("Enviando... <span class='fa fa-spinner fa-spin'></span>");
+			
+			$(".formContato").ajaxSubmit({
+				url     : "model/contato",
+				type    : "POST",
+				success : function(data){ 
+					$(".send").html("ENVIAR <span class='fa fa-paper-plane'></span>");
+					$(".formContato .result").html(data);
+					enviandoContato = 0;
+				}
+			});
+
+			return false;
+		});
+
+	});
+</script>

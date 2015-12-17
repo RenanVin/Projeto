@@ -1,0 +1,15 @@
+@import url("bootstrap.css");
+@import url("default.css");
+@import url("../js/sweetalert2/sweetalert2.css");
+@import url("font-awesome.css");
+@import url("../js/owl-carousel/owl.carousel.css");
+@import url("../js/owl-carousel/owl.theme.css");
+@import url("../js/gallery/blueimp-gallery.min.css");
+@import url("../js/gallery/bootstrap-image-gallery.min.css");
+
+body{
+	color: #666;
+}
+.btn{
+	outline: none!important;
+}

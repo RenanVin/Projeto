@@ -1,0 +1,30 @@
+
+<div class="container parceiros">
+
+	<script>
+	$(document).ready(function(){
+		$(".load-more").click(function(){
+			alert("ok");
+		});
+	});
+	</script>
+
+	<div class="titles">
+		<h1>{TITULO}</h1>
+	</div>
+
+	<div class="row list">
+		<!-- BEGIN BLOCK_PARCEIROS -->
+		<div class="col-md-4">
+			<a href="{SITE}" target="_blank">
+				<img src="uploads/parceiros/{LOGO}" alt="{NOME}" />
+			</a>
+		</div>
+		<!-- END BLOCK_PARCEIROS -->
+
+		<div class="col-md-12 text-center">
+			<a href="javascript: void(0);" class="load-more">{TEXT_MORE}</a>
+		</div>
+	</div>
+
+</div>

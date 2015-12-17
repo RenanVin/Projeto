@@ -1,0 +1,17 @@
+Manual dos arquivos
+---------------------------------------------------------------------
+index.php               -> Carrega todos os arquivos de configurações
+system/connection.php   -> Conexão com banco de dados
+system/mysql.php        -> Funções para INSERT, UPDATE e DELETE do MySql
+system/functions.php    -> Agrupa todas as funções utilizadas no site e no painel
+system/router.php       -> Configuração de URLs amigáveis
+system/settings.php     -> Informações do site
+system/smtp.php         -> Configuração de SMTP para envio de e-mails
+system/template.php     -> Classe para utilização de templates html
+
+O que falta
+---------------------------------------------------------------------
+ - Verificar sistemas de update de usuários online
+ - Inserir em cron -> $.get("<?php echo CP; ?>/model/clear.visitors.online");
+ - max_usuarios_online inserindo mais que o normal
+ - Visitas device inserindo mais que o normal
