@@ -29,12 +29,16 @@
 		{
 			$btnColor = "#F8C086";
 		}
+		elseif($type == "info")
+		{
+			$btnColor = "#C9DAE1";
+		}
 
 		return '
 			<script>
 				swal({
 					title : "'.$title.'",
-					text  : "'.$msg.'",
+					html  : "'.$msg.'",
 					type  : "'.$type.'",   
 					confirmButtonColor : "'.$btnColor.'",   
 					confirmButtonText  :  "'.$btnText.'",   
@@ -70,6 +74,10 @@
 		{
 			$btnColor = "#F8BssF86";
 		}
+		elseif($type == "info")
+		{
+			$btnColor = "#C9DAE1";
+		}
 		else
 		{
 			$btnColor = "#888888";
@@ -79,7 +87,7 @@
 		<script>
 			swal({
 				title : "'.$title.'",
-				text  : "'.$msg.'",
+				html  : "'.$msg.'",
 				type  : "'.$type.'",   
 				confirmButtonColor : "'.$btnColor.'",   
 				confirmButtonText  :  "'.$btnText.'",   
