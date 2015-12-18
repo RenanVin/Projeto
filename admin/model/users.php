@@ -7,15 +7,6 @@
 
 	if(router(2) == "insert")
 	{
-		echo sweetOptions(
-			"Sucesso!", 
-			"Usuário cadastrado com sucesso.", 
-			"success", 
-			array("#AADE8D", "Fechar", "swal.close;"),
-			array("#666", "Cadastrar outro", "swal.close;")
-			);
-
-		exit;
 		extract($_POST);
 
 		if(!$_POST)
